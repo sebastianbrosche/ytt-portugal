@@ -1,0 +1,16 @@
+name = "bsport-sync"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "BSPORT_KV"
+id = "5c14556c2ebb4eab9e11229a6cbb83cb"
+
+[triggers]
+crons = ["0 19 * * *", "0 8 1 * *"]
+
+[vars]
+# Secrets set via wrangler secret put:
+# GOOGLE_CLIENT_SECRET = "your_google_client_secret"
+# RESEND_API_KEY = "your_resend_api_key"
+# BSPORT_API_TOKEN = "your_bsport_api_token"
