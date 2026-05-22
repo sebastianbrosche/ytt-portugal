@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (response.ok) {
           applyForm.style.display = 'none';
           thanksDiv.style.display = 'block';
-          gtag && gtag('event', 'generate_lead', { method: 'email' });
+          typeof gtag === 'function' && gtag('event', 'generate_lead', { method: 'email' });
         } else {
           throw new Error(data.error || 'Something went wrong');
         }

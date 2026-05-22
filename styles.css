@@ -219,10 +219,10 @@ button {
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
-  padding: 120px 0 80px;
+  justify-content: center;
+  padding: 120px 24px 80px;
   background: linear-gradient(135deg, #faf8f5 0%, #f5f0ea 100%);
   position: relative;
   overflow: hidden;
@@ -294,8 +294,9 @@ button {
 }
 
 .hero-content {
-  padding: 0 48px 0 80px;
-  max-width: 600px;
+  padding: 0 24px;
+  max-width: 700px;
+  text-align: center;
   position: relative;
   z-index: 1;
   animation: fadeInUp 0.8s ease forwards;
@@ -343,6 +344,7 @@ button {
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 36px;
+  justify-content: center;
 }
 
 .btn-primary {
@@ -1055,6 +1057,7 @@ button {
 .apply-form input,
 .apply-form select,
 .apply-form textarea {
+  width: 100%;
   padding: 16px 18px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1633,4 +1636,122 @@ button {
 
 .sculpt-page .hero-meta span {
   color: #ddd !important;
+}
+
+/* ===== INSTRUCTOR SPLIT LAYOUT ===== */
+.instructor-split {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.instructor-photo {
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 500px;
+  max-width: 400px;
+}
+.instructor-photo img {
+  max-height: 500px;
+  width: auto;
+  display: block;
+  object-fit: cover;
+}
+.instructor-text h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.instructor-text .trainer-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b87333;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+.instructor-text .trainer-bio {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .instructor-split {
+    grid-template-columns: 1fr;
+  }
+  .instructor-photo {
+    max-height: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    order: -1;
+  }
+}
+
+/* ===== SCULPT PAGE FIXES ===== */
+
+/* Nav bar on sculpt page - dark background so white text is visible */
+.sculpt-page .nav {
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.sculpt-page .nav-logo,
+.sculpt-page .nav-link {
+  color: #fff;
+}
+.sculpt-page .nav-logo:hover,
+.sculpt-page .nav-link:hover {
+  color: #b87333;
+}
+/* Hero centering */
+.hero-sculpt .hero-content {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 700px;
+}
+
+/* About Alizee - trainer card transparent so dark bg shows */
+.sculpt-page .trainer-card {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.sculpt-page .trainer-photo {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.sculpt-page .trainer-card h3 {
+  color: #fff !important;
+}
+.sculpt-page .trainer-role {
+  color: #b87333 !important;
+}
+.sculpt-page .trainer-bio {
+  color: #ccc !important;
+}
+
+/* Apply section - dark background */
+.sculpt-page #form {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%) !important;
+}
+.sculpt-page #form .section-title,
+.sculpt-page #form .section-sub {
+  color: #fff !important;
+}
+.sculpt-page #form input,
+.sculpt-page #form textarea {
+  background: rgba(255,255,255,0.05) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+}
+.sculpt-page #form input::placeholder,
+.sculpt-page #form textarea::placeholder {
+  color: #999 !important;
+}
+.sculpt-page #form .form-note {
+  color: #888 !important;
 }
