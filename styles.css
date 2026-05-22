@@ -1723,6 +1723,15 @@ button {
   }
 }
 
+/* ===== VERSION STAMP ===== */
+.version-stamp {
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  padding: 4px 0;
+  opacity: 0.6;
+}
+
 /* ===== SCULPT PAGE FIXES ===== */
 
 /* Nav bar on sculpt page - dark background so white text is visible */
