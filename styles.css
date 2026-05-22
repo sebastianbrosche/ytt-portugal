@@ -1647,15 +1647,17 @@ button {
   max-width: 1000px;
   margin: 0 auto;
 }
+.instructor-left {
+  max-width: 400px;
+}
 .instructor-photo {
   border-radius: 16px;
   overflow: hidden;
   max-height: 500px;
-  max-width: 400px;
 }
 .instructor-photo img {
-  max-height: 500px;
-  width: auto;
+  width: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
 }
@@ -1684,8 +1686,7 @@ button {
   .instructor-split {
     grid-template-columns: 1fr;
   }
-  .instructor-photo {
-    max-height: 500px;
+  .instructor-left {
     max-width: 100%;
     margin: 0 auto;
     order: -1;
