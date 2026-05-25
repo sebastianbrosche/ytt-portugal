@@ -899,6 +899,15 @@ button {
   z-index: 1;
 }
 
+.testimonial-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid rgba(184, 115, 51, 0.15);
+}
+
 .testimonial-name {
   font-weight: 700;
   font-size: 16px;
