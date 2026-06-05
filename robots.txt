@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /bsport-worker/
+Disallow: /worker/
+
+Sitemap: https://yogateachertrainingportugal.eu/sitemap.xml
