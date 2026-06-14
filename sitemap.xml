@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yogateachertrainingportugal.eu/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://yogateachertrainingportugal.eu/200h</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yogateachertrainingportugal.eu/sculpt</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -44,15 +44,21 @@
   </url>
   <url>
     <loc>https://yogateachertrainingportugal.eu/blog/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yogateachertrainingportugal.eu/blog/sculpt-teacher-training-guide</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yogateachertrainingportugal.eu/blog/yoga-teacher-training-portugal-guide</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://yogateachertrainingportugal.eu/blog/vinyasa-vs-hatha-ytt</loc>
@@ -61,13 +67,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://yogateachertrainingportugal.eu/blog/what-to-expect-15-day-ytt.html</loc>
+    <loc>https://yogateachertrainingportugal.eu/blog/what-to-expect-15-day-ytt</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://yogateachertrainingportugal.eu/blog/yoga-teacher-training-cost-europe-2026.html</loc>
+    <loc>https://yogateachertrainingportugal.eu/blog/yoga-teacher-training-cost-europe-2026</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -77,5 +83,29 @@
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yogateachertrainingportugal.eu/blog/ytt-after-40</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yogateachertrainingportugal.eu/blog/ytt-vs-online</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yogateachertrainingportugal.eu/blog/ytt-accommodation-lagos</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://yogateachertrainingportugal.eu/blog/why-choose-portugal-ytt</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
