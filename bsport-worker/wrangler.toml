@@ -7,7 +7,7 @@ binding = "BSPORT_KV"
 id = "5c14556c2ebb4eab9e11229a6cbb83cb"
 
 [triggers]
-crons = ["0 19 * * *", "0 8 1 * *"]
+crons = ["0 19 * * *", "0 8 1 * *", "0 9 * * 2", "0 8 * * 1"]
 
 [vars]
 # Secrets set via wrangler secret put:
