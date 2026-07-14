@@ -95,7 +95,10 @@ async function appendLeadToGitHub(lead, env) {
   if (getRes.status === 200) {
     const body = await getRes.json();
     sha = body.sha;
-    existing = atob(body.content.replace(/\n/g, ""));
+    // GitHub base64 content may include newlines; empty file is size 0
+    if (body.content) {
+      existing = utf8FromBase64(body.content.replace(/\n/g, ""));
+    }
   } else if (getRes.status !== 404) {
     const t = await getRes.text();
     console.error("GitHub get failed", getRes.status, t);
@@ -103,8 +106,10 @@ async function appendLeadToGitHub(lead, env) {
   }
 
   const line = JSON.stringify(lead);
-  const next = existing ? `${existing.replace(/\s*$/, "")}\n${line}\n` : `${line}\n`;
-  const contentB64 = btoa(unescape(encodeURIComponent(next)));
+  const next = existing.trim()
+    ? `${existing.replace(/\s*$/, "")}\n${line}\n`
+    : `${line}\n`;
+  const contentB64 = utf8ToBase64(next);
 
   const putRes = await fetch(apiBase, {
     method: "PUT",
@@ -258,8 +263,15 @@ async function handleCapture(request, env, ctx) {
     ctx.waitUntil(notifyStine(lead, env, isWaitlist));
   }
 
+  let github = null;
   if (isWaitlist) {
-    ctx.waitUntil(appendLeadToGitHub(lead, env));
+    // Await so failures surface in logs / response meta (not silent waitUntil)
+    try {
+      github = await appendLeadToGitHub(lead, env);
+    } catch (e) {
+      console.error("github append threw", e);
+      github = { ok: false, reason: String(e && e.message ? e.message : e) };
+    }
   }
 
   return json({
@@ -268,6 +280,7 @@ async function handleCapture(request, env, ctx) {
     message: isWaitlist
       ? "You're on the 2027 waitlist. We'll be in touch."
       : "Thanks! Check your inbox.",
+    github,
   });
 }
 
@@ -365,6 +378,21 @@ async function handleExport(request, env) {
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Workers-safe UTF-8 base64 (no unescape / encodeURIComponent)
+function utf8ToBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = "";
+  for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+  return btoa(binary);
+}
+
+function utf8FromBase64(b64) {
+  const binary = atob(b64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
 }
 
 function escapeHtml(s) {
