@@ -6,7 +6,12 @@ compatibility_date = "2024-01-01"
 binding = "LEADS_KV"
 id = "afd3c6d107cb4527acaa1371ded86790"
 
+# Daily: flip early bird on 2026-07-15 Lisbon (then no-op).
+# Runs ~00:00 UTC; Lisbon check is inside the handler.
+[triggers]
+crons = ["5 0 * * *"]
+
 [vars]
-# Add these via wrangler secret put or dashboard:
-# RESEND_API_KEY = "your_resend_api_key"
-# NOTIFY_EMAIL = "stine.hegre@gmail.com,sebastian.brosche@gmail.com"
+# Secrets via wrangler secret put:
+# RESEND_API_KEY, GITHUB_TOKEN, ADMIN_TOKEN
+NOTIFY_EMAIL = "stine.hegre@gmail.com"

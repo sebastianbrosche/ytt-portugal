@@ -6,11 +6,11 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>SCULPT Teacher Training Portugal | 3 Days | Sept 2026</title>
-  <meta name="description" content="3-day SCULPT teacher training in Lagos, Portugal. Sept 18-20, 2026. For yoga & Pilates instructors. Early bird €490. Led by Alizee.">
+  <title>SCULPT Teacher Training Portugal | 3 Days | One Spot Left | Sept 2026</title>
+  <meta name="description" content="3-day SCULPT teacher training in Lagos, Portugal. Sept 18-20, 2026. One spot left. Early bird until 15 July, then €550. Led by Alizee.">
   <link rel="canonical" href="https://yogateachertrainingportugal.eu/sculpt">
-  <meta property="og:title" content="SCULPT Teacher Training Portugal | 3 Days | Sept 2026">
-  <meta property="og:description" content="3-day SCULPT teacher training in Lagos, Portugal. Sept 18-20, 2026. For yoga & Pilates instructors. Early bird €490. Led by Alizee.">
+  <meta property="og:title" content="SCULPT Teacher Training | One Spot Left | Sept 2026">
+  <meta property="og:description" content="3-day SCULPT training in Lagos. One spot left. Early bird until 15 July, then €550.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yogateachertrainingportugal.eu/sculpt">
   <meta property="og:image" content="https://yogateachertrainingportugal.eu/images/alizee-sculpt.png">
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="SCULPT Teacher Training Portugal | 3 Days | Sept 2026">
   <meta name="twitter:description" content="3-day SCULPT teacher training in Lagos, Portugal. Sept 18-20, 2026. For yoga & Pilates instructors. Early bird €490. Led by Alizee.">
   <meta name="twitter:image" content="https://yogateachertrainingportugal.eu/images/alizee-sculpt.png">
-  <link rel="stylesheet" href="styles.css?v=32">
+  <link rel="stylesheet" href="styles.css?v=33">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RB1DZCK81"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -69,8 +69,9 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">← Yoga Teacher Training Portugal</a>
+      <a href="/" class="nav-logo">← Heat Lagos Training</a>
       <a href="/" class="nav-link">Home</a>
+      <a href="/#waitlist" class="nav-link">2027 Waitlist</a>
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/testimonials" class="nav-link">Testimonials</a>
     </div>
@@ -79,11 +80,12 @@
   <!-- Hero -->
   <section class="hero-sculpt">
     <div class="hero-content" style="padding-top: 100px;">
-      <p class="subtitle" style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 13px; margin-bottom: 16px; opacity: 0.7;">September 18-20, 2026 · Lagos, Portugal</p>
+      <p class="subtitle" id="spotsBadge" style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 13px; margin-bottom: 16px; color: #B87333;">One spot left · September 18-20, 2026 · Lagos</p>
       <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.05; margin-bottom: 24px;">SCULPT<br>Teacher Training</h1>
       <p style="font-size: 1.15rem; opacity: 0.85; max-width: 520px; margin: 0 auto 32px;">3 day Sculpt certification for Yoga/Pilates teachers</p>
+      <p style="font-size: 1rem; margin-bottom: 28px; opacity: 0.9;" id="heroPriceLine"><span data-price-line>Early bird €490 · €550 from 15 July</span></p>
       <div class="hero-buttons">
-        <a href="#form" class="btn-primary">Apply Now</a>
+        <a href="#form" class="btn-primary" data-pay-cta>Secure the last spot</a>
         <a href="#about-training" class="btn-secondary">Explore the Training</a>
       </div>
     </div>
@@ -144,7 +146,7 @@
           <p class="trainer-bio">Today, Alizee wants to share this expertise through her SCULPT Teacher Training — designed for Pilates, yoga, and fitness instructors who want to expand their teaching skills and offer their students a powerful new low-impact training method.</p>
           <p class="trainer-bio"><strong>The training focuses on intelligent sequencing, effective programming, strong coaching foundations, musicality, and creating classes that are both challenging and accessible.</strong></p>
           <div style="margin-top: 24px; text-align: center;">
-            <a href="https://backoffice.bsport.io/customer/payment/shop-item/460282/?membership=5821" target="_blank" class="btn-primary" style="font-size: 16px; padding: 14px 32px;">Pay Now - €490</a>
+            <a href="https://backoffice.bsport.io/customer/payment/shop-item/460282/?membership=5821" target="_blank" class="btn-primary" style="font-size: 16px; padding: 14px 32px;" data-pay-cta>Pay Now — one spot left</a>
           </div>
         </div>
       </div>
@@ -155,17 +157,14 @@
   <section class="pricing" style="padding: 80px 0; background: #111;">
     <div class="container">
       <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 720px; margin: 0 auto;">
-        <div class="pricing-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border-radius: 12px; padding: 40px 32px; text-align: center; border: 1px solid rgba(184,115,51,0.2);">
-          <p class="pricing-label" style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 12px; color: #B87333; margin-bottom: 16px;">Early Bird</p>
-          <p class="pricing-amount" style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 8px;">€490</p>
-          <p class="pricing-note" style="font-size: 14px; opacity: 0.7;">Register before July 15, 2026</p>
+        <div class="pricing-card" id="pricingCard" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border-radius: 12px; padding: 40px 32px; text-align: center; border: 1px solid rgba(184,115,51,0.2);">
+          <p class="pricing-label" id="pricingLabel" style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 12px; color: #B87333; margin-bottom: 16px;">One spot left · Early Bird</p>
+          <p class="pricing-amount" id="pricingAmount" style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 8px;" data-price-display>€490</p>
+          <p class="pricing-note" id="pricingNote" style="font-size: 14px; opacity: 0.7;">Register before 15 July 2026 · then €550</p>
           <div style="margin-top: 24px;">
-            <a href="https://backoffice.bsport.io/customer/payment/shop-item/460282/?membership=5821" target="_blank" class="btn-primary" style="font-size: 16px; padding: 14px 32px;">Pay Now - €490</a>
+            <a href="https://backoffice.bsport.io/customer/payment/shop-item/460282/?membership=5821" target="_blank" class="btn-primary" style="font-size: 16px; padding: 14px 32px;" data-pay-cta id="payBtn">Pay Now - €490</a>
           </div>
-          <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.15); margin: 24px 0;">
-          <p class="pricing-label" style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 12px; opacity: 0.6; margin-bottom: 8px;">Regular Price</p>
-          <p class="pricing-amount" style="font-size: 2rem; font-weight: 700; color: rgba(255,255,255,0.6); margin-bottom: 8px;">€550</p>
-          <p class="pricing-note" style="font-size: 14px; opacity: 0.5;">After July 15, 2026</p>
+          <p style="margin-top:16px;font-size:13px;opacity:0.55;" id="pricingFootnote">Price flips automatically at midnight Lisbon on 15 July 2026.</p>
         </div>
       </div>
     </div>
@@ -196,19 +195,19 @@
   <section class="apply" id="form">
     <div class="container">
       <div class="apply-card">
-        <h2>Ready to Join?</h2>
-        <p class="apply-sub">Choose your programme and we'll send you the full details.</p>
+        <h2>Secure the last spot</h2>
+        <p class="apply-sub"><strong>One spot left</strong> for SCULPT 18–20 September 2026. Leave your email for details, or pay now.</p>
         <div class="apply-form">
           <form id="applyForm">
             <input type="email" id="applicantEmail" name="email" placeholder="Your email address" required style="margin-bottom:5px;">
             
             <button type="submit" class="btn-primary btn-large btn-full">Send me the details</button>
             
-            <p class="form-note">We'll email you the full schedule, curriculum, and application details. Questions? DM us on Instagram @heat_lagos.</p>
+            <p class="form-note">We'll email schedule, curriculum, and next steps. Questions? DM @heat_lagos.</p>
           </form>
           
           <div id="thanks" style="display:none; margin-top:24px; padding:20px; border-radius:8px; background:rgba(184,115,51,0.15); border:1px solid rgba(184,115,51,0.3);">
-            <p style="color:#fff; font-size:16px; margin:0;"><strong>Thanks for reaching out!</strong> We'll send you a personal email with a few questions to learn more about you and your goals. If you'd prefer, we can also jump on a quick phone call - just let us know. Looking forward to connecting.</p>
+            <p style="color:#fff; font-size:16px; margin:0;"><strong>Thanks!</strong> We'll follow up personally about the last SCULPT spot.</p>
           </div>
           
           <div id="formError" style="display:none; margin-top:24px; padding:16px; border-radius:8px; background:rgba(220,53,69,0.15); border:1px solid rgba(220,53,69,0.3);">
@@ -216,9 +215,13 @@
           </div>
           
           <div style="margin-top:20px; text-align:center;">
-            <p style="color:rgba(255,255,255,0.6); font-size:14px; margin-bottom:12px;">Already decided? Secure your spot now:</p>
-            <a href="https://backoffice.bsport.io/customer/payment/shop-item/460282/?membership=5821" target="_blank" class="btn-secondary" style="font-size:14px;">Pay Now - €490</a>
+            <p style="color:rgba(255,255,255,0.6); font-size:14px; margin-bottom:12px;">Ready now? Pay to lock the last place:</p>
+            <a href="https://backoffice.bsport.io/customer/payment/shop-item/460282/?membership=5821" target="_blank" class="btn-secondary" style="font-size:14px;" data-pay-cta>Pay Now</a>
           </div>
+          <p style="margin-top:28px;text-align:center;font-size:14px;opacity:0.7;">
+            Looking for 200-hour YTT? That programme is closed for 2026.
+            <a href="/#waitlist" style="color:#B87333;">Join the early 2027 waitlist →</a>
+          </p>
         </div>
         <div class="apply-contact">
           <p>Or reach out directly:</p>
@@ -234,8 +237,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <p class="footer-logo">YOGA TEACHER TRAINING PORTUGAL</p>
-          <p class="footer-tag">A Heat Lagos programme.</p>
+          <p class="footer-logo">HEAT LAGOS TRAINING</p>
+          <p class="footer-tag">SCULPT · Lagos, Portugal</p>
         </div>
         <div class="footer-links">
           <a href="https://heatlagos.com" target="_blank">Heat Lagos Studio</a>
@@ -250,11 +253,11 @@
           8600-854 Lagos, Portugal</p>
         </div>
       </div>
-      <p class="footer-copy">© 2026 v32 Heat Lagos. All rights reserved.</p>
+      <p class="footer-copy">© 2026 v33 Heat Lagos. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=33"></script>
   <script>
     // Scroll animation fallback
     const observer = new IntersectionObserver((entries) => {
@@ -275,6 +278,6 @@
     }, 1000);
   </script>
 
-<div class="version-stamp">v32</div>
+<div class="version-stamp">v33</div>
 </body>
 </html>
