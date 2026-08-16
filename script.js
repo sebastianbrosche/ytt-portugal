@@ -78,14 +78,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ===== PRICING (early bird ends 2026-07-15 Lisbon; worker is source of truth) =====
   function applyPricing(p) {
-    const price = p.price || 490;
+    const price = p.price || 550;
     const early = !p.earlyBirdEnded;
-    const label = early
-      ? 'One spot left · Early bird €' + price
-      : 'One spot left · €' + price;
+    const dates = 'January 29-31, 2027';
+    const soldOut =
+      'September 2026 SOLD OUT · next dates January 29-31, 2027';
+    const label = soldOut + ' · €' + price;
     const line = early
       ? 'Early bird €' + price + ' · €550 from 15 July'
-      : '€' + price + ' · regular rate';
+      : '€' + price + ' · ' + dates;
 
     document.querySelectorAll('[data-price-display]').forEach(function (el) {
       el.textContent = '€' + price;
@@ -94,20 +95,22 @@ document.addEventListener('DOMContentLoaded', function () {
       el.textContent = line;
     });
     document.querySelectorAll('[data-pay-cta]').forEach(function (el) {
-      el.textContent = early
-        ? 'Pay Now - €' + price + ' · last spot'
-        : 'Pay Now - €' + price + ' · last spot';
+      el.textContent = 'Pay Now - €' + price + ' · ' + dates;
       if (p.payUrl) el.setAttribute('href', p.payUrl);
     });
 
     const pricingLabel = document.getElementById('pricingLabel');
     const pricingNote = document.getElementById('pricingNote');
     const pricingFootnote = document.getElementById('pricingFootnote');
+    const spotsBadge = document.getElementById('spotsBadge');
+    const cardSpots = document.getElementById('cardSpots');
     if (pricingLabel) pricingLabel.textContent = label;
+    if (spotsBadge) spotsBadge.textContent = soldOut + ' · Lagos';
+    if (cardSpots) cardSpots.textContent = 'September 2026 SOLD OUT';
     if (pricingNote) {
       pricingNote.textContent = early
         ? 'Register before 15 July 2026 · then €550'
-        : 'Regular price · one spot left';
+        : 'September 2026 is SOLD OUT. Next dates: January 29-31, 2027.';
     }
     if (pricingFootnote) {
       pricingFootnote.textContent = early
@@ -117,7 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const heroPriceLine = document.getElementById('heroPriceLine');
     if (heroPriceLine && early === false) {
       heroPriceLine.innerHTML =
-        '<strong>€' + price + '</strong> · <strong>one spot left</strong>';
+        'Next dates <strong>' +
+        dates +
+        '</strong> · September 2026 is <strong>SOLD OUT</strong>';
     }
   }
 
@@ -166,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
           body: JSON.stringify({
             email: email,
             source: 'sculpt-website',
-            programme: 'sculpt-sept-2026',
+            programme: 'sculpt-jan-2027',
           }),
         });
         const data = await response.json();

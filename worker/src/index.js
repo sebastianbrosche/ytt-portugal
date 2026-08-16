@@ -35,13 +35,18 @@ function resolvePricing(earlyBirdEndedFlag) {
   const earlyBirdEnded = earlyBirdEndedFlag === true || endedByDate;
   const price = earlyBirdEnded ? SCULPT_REGULAR : SCULPT_EARLY;
   return {
-    programme: "sculpt-sept-2026",
+    programme: "sculpt-jan-2027",
+    datesLabel: "January 29-31, 2027",
+    startDate: "2027-01-29",
+    endDate: "2027-01-31",
+    septemberSoldOut: true,
+    septemberDatesLabel: "September 18-20, 2026",
     earlyBirdEnded,
     earlyBirdEndDate: EARLY_BIRD_END_DATE,
     price,
     currency: "EUR",
-    spotsLeft: 1,
-    spotsLabel: "One spot left",
+    spotsLeft: null,
+    spotsLabel: "September 2026 SOLD OUT · next dates January 29-31, 2027",
     payUrl: PAY_URL,
     todayLisbon: today,
   };
@@ -198,8 +203,9 @@ export default {
         sendEmail({
           to: STINE_EMAIL,
           subject: "Sculpt pricing flipped to €550 (early bird ended)",
-          html: `<p>Early bird for SCULPT Sept 2026 has ended (Lisbon date ${today}).</p>
-                 <p>Site price is now <strong>€550</strong>. Spots: <strong>one left</strong>.</p>
+          html: `<p>Early bird for SCULPT has ended (Lisbon date ${today}).</p>
+                 <p>Site price is now <strong>€550</strong>.</p>
+                 <p>September 2026 is <strong>SOLD OUT</strong>. Next dates: <strong>January 29-31, 2027</strong>.</p>
                  <p>Worker KV flag pricing:sculpt:early_bird_ended = 1</p>`,
           apiKey: env.RESEND_API_KEY,
         })
@@ -227,7 +233,7 @@ async function handleCapture(request, env, ctx) {
   const email = (data.email || "").trim().toLowerCase();
   const name = (data.name || "").trim();
   const source = (data.source || "website").trim();
-  const programme = (data.programme || "sculpt-2026").trim();
+  const programme = (data.programme || "sculpt-jan-2027").trim();
   const interest = (data.interest || "").trim();
 
   if (!email || !isValidEmail(email)) {
